@@ -78,7 +78,7 @@
        let valorEncontrado = buscarValorArray(arrayNum,2);
        console.log(valorEncontrado);
        console.log("-.-----------------------------------");
-        var arrayNum1 = [1,2,7,7,3,4,5,6];
+        var arrayNum1 = [10,2,7,7,5,10,10];
         var arrayNum2 = [6,7,8];
        function dividirArreglos(arrayNum1)
        {
@@ -103,27 +103,60 @@
        }
        return arrayImpar;
        }
-       
+     //  console.log(arrayNum1);
      // let arrayImpar = dividirArreglos(arrayNum1);
        //console.log("primero:" +arrayNum1+" \n segundo:"+arrayImpar); 
-       //arrayNum1.sort((a, b) => a - b);
-       console.log(arrayNum1);
+       arrayNum1.sort((a, b) => a - b);
+    
+
+
+
+
+
+
+
+
        function eliminarDuplicadosArray(array)
        {
             let copiaArray = [...array];
             for(let i =0; i<array.length; i++)
             {
-                for(let f = 0;f < copiaArray.length; f++)
+                while(array[i] == array[i+1])
                 {
-                    if(copiaArray[f]==array[i] && f != i)
-                    {
-                        array.splice(i,1);
-                    }
-               }
+                    array.splice(i,1);
+                }   
             }
        }
-       eliminarDuplicadosArray(arrayNum1);
+       //console.log(arrayNum1);
+      eliminarDuplicadosArray(arrayNum1);
        console.log(arrayNum1);
+      function eliminarValorArray(array,valor)
+      {
+        for(let i =0; i<array.length; i++)
+            {
+                while(array[i] == valor)
+                {
+                    array.splice(i,1);
+                }   
+            }
+      }
+     // eliminarValorArray(arrayNum1,2);
+      //console.log(arrayNum1);
+      let numsJoaco = [3,4,5,6,7];
+      console.log(numsJoaco);
+      function convinarArray(array1, array2)
+      {
+            for(let i=0; i<array1.length;i++)
+            {
+                
+                array2.push(array1[i]);
+            }
+            array2.sort((a, b) => a - b);
+            eliminarDuplicadosArray(array2);
+      }
+      convinarArray(numsJoaco,arrayNum1);
+      console.log(arrayNum1);
+
     </script>
 </body>
 </html>
