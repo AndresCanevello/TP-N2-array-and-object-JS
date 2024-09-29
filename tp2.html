@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrayNum = [1,2,3,4,5];
+        function sumarArray(arreglo)
+        {
+            let contador = 0;
+            for(let i=0;i < arreglo.length; i++)
+        {
+            contador +=arreglo[i];
+        }
+        return contador;
+        }
+        let totalArray = sumarArray(arrayNum);
+        console.log(totalArray);
+        function promediarArray(arreglo)
+        {
+            let contador = 0;
+            for(let i=0;i < arreglo.length; i++)
+        {
+            contador +=arreglo[i];
+        }
+        return contador/arreglo.length;
+        }
+        let promedioArray = promediarArray(arrayNum);
+        console.log(promedioArray);
+        function encontrarMenorArray(arreglo)
+        {
+            let menor = arreglo[0];
+            let contador = 0;
+            for(let i=0;i < arreglo.length; i++)
+        {
+            if(menor >= arreglo[i])
+        {
+            menor = arreglo[i];
+        }
+        }
+        return menor;
+        }
+        function encontrarMayorArray(arreglo)
+        {
+            let mayor = arreglo[0];        
+            for(let i=0;i < arreglo.length; i++)
+        {
+            if(mayor <= arreglo[i])
+        {
+            mayor = arreglo[i];
+        }
+        }
+        return mayor;
+       }
+       let menor = encontrarMenorArray(arrayNum);
+       let mayor = encontrarMayorArray(arrayNum);
+       console.log("mayor:"+mayor+"---menor:"+menor);
+       function buscarValorArray(array,valor)
+       {
+        let flag = false;
+        for(let i=0;i < array.length; i++)
+        {
+            if(valor == array[i] && flag == false)
+        {
+            valor = i;
+            flag = true;
+        }
+        }
+        if(flag == false)
+        {
+            valor = -1; //retorna -1 si no lo encontro
+        }
+        return valor;
+       }
+       let valorEncontrado = buscarValorArray(arrayNum,2);
+       console.log(valorEncontrado);
+       console.log("-.-----------------------------------");
+        var arrayNum1 = [1,2,7,7,3,4,5,6];
+        var arrayNum2 = [6,7,8];
+       function dividirArreglos(arrayNum1)
+       {
+      let array1Copia = [...arrayNum1];
+        let arrayPares= [];
+        let arrayImpar = [];
+        for(let i = 0; i<array1Copia.length; i++)
+       {
+            if(array1Copia[i] % 2 == 0)
+            {
+                arrayPares.push(array1Copia[i]);
+            }
+            else
+            {  
+                arrayImpar.push(array1Copia[i]);
+            }
+       }
+       arrayNum1.splice(0,arrayNum1.length);
+       for(let i = 0; i < arrayPares.length; i++)
+       {
+        arrayNum1.push(arrayPares[i]);
+       }
+       return arrayImpar;
+       }
+       
+     // let arrayImpar = dividirArreglos(arrayNum1);
+       //console.log("primero:" +arrayNum1+" \n segundo:"+arrayImpar); 
+       //arrayNum1.sort((a, b) => a - b);
+       console.log(arrayNum1);
+       function eliminarDuplicadosArray(array)
+       {
+            let copiaArray = [...array];
+            for(let i =0; i<array.length; i++)
+            {
+                for(let f = 0;f < copiaArray.length; f++)
+                {
+                    if(copiaArray[f]==array[i] && f != i)
+                    {
+                        array.splice(i,1);
+                    }
+               }
+            }
+       }
+       eliminarDuplicadosArray(arrayNum1);
+       console.log(arrayNum1);
+    </script>
+</body>
+</html>
