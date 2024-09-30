@@ -156,7 +156,44 @@
       }
       convinarArray(numsJoaco,arrayNum1);
       console.log(arrayNum1);
-
+      let listaCompras = [{producto:"Jabon",cant:10},{producto:"Detergente",cant:2},{producto:"Pasta dental",cant:1}];
+      console.log(listaCompras);
+      let agendaContactos = [{nombre:"joaco",numero:223,correo:"cane@gmail"},{nombre:"andru",numero:32112,correo:"cane1@gmail"},{nombre:"agus",numero:123,correo:"cane2@gmail"}]
+      console.log(agendaContactos);
+      const parrafo = "Hola andres, Hola Sos un muy buen programador";
+      console.log(parrafo);
+      function contarPalabra(palabra,parrafo)
+      {
+        let flag = false;
+        let contador = 0;
+        for(let i=0; i<parrafo.length; i++)
+      {
+        if(parrafo[i] == palabra[0])
+      {
+        for (let o = 0; o< palabra.length;o++)
+      {
+        console.log("o:"+o+" and i:"+i);
+        if(palabra[o] == parrafo[i])
+      {
+        flag = true;
+      }
+      else
+      {
+        flag = false;
+      }
+      i++;
+      }
+      }
+      if(flag == true)
+      {
+        contador += 1;
+      }
+      flag = false;
+      }
+      return contador;
+      }
+      let contador = contarPalabra("programador",parrafo);
+      console.log(contador);
     </script>
 </body>
 </html>
