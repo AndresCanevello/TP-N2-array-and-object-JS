@@ -172,7 +172,6 @@
       {
         for (let o = 0; o< palabra.length;o++)
       {
-        console.log("o:"+o+" and i:"+i);
         if(palabra[o] == parrafo[i])
       {
         flag = true;
@@ -194,6 +193,16 @@
       }
       let contador = contarPalabra("programador",parrafo);
       console.log(contador);
+      function ordenarArrayObjetosPorNombre(arrayObject)
+      {
+        arrayObject.sort((a,b)=> a.nombre.localeCompare(b.nombre));
+        return arrayObject;
+      }
+      let nuevoArrayOrdenado = ordenarArrayObjetosPorNombre(agendaContactos);
+      console.log(nuevoArrayOrdenado);
+
+      let registroVentas = [{item:"Jabon",vendido:10,precio:5},{item:"Detergente",vendido:2,precio:10},{item:"Pasta dental",vendido:1,precio:100}];
+      
     </script>
 </body>
 </html>
